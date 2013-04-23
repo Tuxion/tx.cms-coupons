@@ -1,0 +1,14 @@
+{
+  "title": "Coupon system",
+  "description": "Enables a central management system for coupons.",
+  "type": "manual",
+  "dbUpdates": true,
+  "versions": [
+    {
+      "version": "0.1",
+      "date": "2013-04-23",
+      "description": "",
+      "changes": []
+    }
+  ]
+}
