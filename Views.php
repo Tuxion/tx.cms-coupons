@@ -9,10 +9,18 @@ class Views extends \dependencies\BaseViews
   
   protected function coupons()
   {
-    return tx('Sql')
-      ->table('coupons', 'Coupons')
-      ->limit(50)
-      ->execute();
+    
+    return array(
+      'types' => tx('Sql')
+        ->table('coupons', 'CouponTypes')
+        ->order('title')
+        ->execute(),
+      'coupons' => tx('Sql')
+        ->table('coupons', 'Coupons')
+        ->order('type_id')
+        ->execute()
+    );
+    
   }
   
 }
