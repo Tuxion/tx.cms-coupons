@@ -17,5 +17,20 @@ class Helpers extends \dependencies\BaseComponent
     $table->where('type_id', $type->id);
     
   }
+    
+  public function delete_coupon($data)
+  {
+
+    //Convert $data to a data object.
+    $data = Data($data);
+
+    //Validate coupon ID.
+    $data->coupon_id->validate('Coupon ID', array('required', 'number'));
+
+    //Delete coupon.
+    $this->table('Coupons')->pk($data->coupon_id)->execute_single()->delete();
+
+  }
+  
   
 }
